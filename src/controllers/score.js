@@ -4,26 +4,32 @@ const getScores = async (req, res) => {
   try {
     const scores = await Score.find();
 
-    res.status(200).json(scores);
+    return res.status(200).json(scores);
   } catch (err) {
-    res.status(400).json({ message: "Cannot get the score", err });
+    return res.status(400).json({ message: "Cannot get the score", err });
   }
 };
 
 const setScores = async (req, res) => {
+  const { name, scorePoints } = req.body;
+
+  let score = {};
+  const scoreAux = await Score.findOne({ name, scorePoints });
+
+  if (scoreAux)
+    return res.status(200).json({ message: "Score already exists" });
+
   try {
-    const { name, scorePoints } = req.body;
+    score = new Score({
+      name,
+      scorePoints,
+    });
 
-    const scoreAux = await Score.findOne({ name, scorePoints });
+    score.save();
 
-    if (!scoreAux) {
-      const newScore = new Score({ name, scorePoints });
-      const score = await newScore.save();
-    }
-
-    res.status(200).json({ message: "Added Succefully", score });
+    return res.status(200).json({ message: "Added Succefully", ...score });
   } catch (err) {
-    res.status(400).json({ message: "Cannot set the score", err });
+    return res.status(400).json({ message: "Cannot set the score", err });
   }
 };
 
