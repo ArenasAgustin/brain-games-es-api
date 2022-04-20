@@ -14,8 +14,12 @@ const setScores = async (req, res) => {
   try {
     const { name, scorePoints } = req.body;
 
-    const newScore = new Score({ name, scorePoints });
-    const score = await newScore.save();
+    const scoreAux = await Score.findOne({ name, scorePoints });
+
+    if (!scoreAux) {
+      const newScore = new Score({ name, scorePoints });
+      const score = await newScore.save();
+    }
 
     res.status(200).json({ message: "Added Succefully", score });
   } catch (err) {
