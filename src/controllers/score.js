@@ -6,7 +6,7 @@ const getScores = async (req, res) => {
 
     res.status(200).json(scores);
   } catch (err) {
-    res.status(400).json({ message: "Cannot get the about" });
+    res.status(400).json({ message: "Cannot get the score", err });
   }
 };
 
