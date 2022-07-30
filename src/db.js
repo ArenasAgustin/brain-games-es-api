@@ -4,7 +4,7 @@ require("dotenv").config();
 const { CONNECTION_URL } = process.env;
 
 mongoose.Promise = global.Promise;
-
+ 
 // Use an alternative db when testing so we don't pollute the original db
 const CONN = CONNECTION_URL;
 
