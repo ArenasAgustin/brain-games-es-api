@@ -6,12 +6,13 @@ Esta API provee los datos y funcionalidades necesarias para el juego Brain Games
 
 ## Tabla de Contenidos
 
-- [Descripción](#descripción)
-- [Tabla de Contenidos](#tabla-de-contenidos)
-- [Cómo usar el proyecto](#cómo-usar-el-proyecto)
-- [Estructura de archivos](#estructura-de-archivos)
-- [Endpoints principales](#endpoints-principales)
-- [Ejemplo de uso](#ejemplo-de-uso)
+- [Brain Games ES - API](#brain-games-es---api)
+  - [Descripción](#descripción)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [Cómo usar el proyecto](#cómo-usar-el-proyecto)
+  - [Estructura de archivos](#estructura-de-archivos)
+  - [Endpoints principales](#endpoints-principales)
+  - [Ejemplo de uso](#ejemplo-de-uso)
 
 ## Cómo usar el proyecto
 
